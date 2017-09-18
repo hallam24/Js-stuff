@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Javascript loop from 1 to 50</title>
+</head>
+<body>
+<h1>Javascript</h1>
+<h2>For Loop from 1 to 50</h2>
+<input type="button" id="button1" value="Display 1 to 50"/>
+
+	
+	<p id="result"></p>
+	
+
+
+<script>
+    var button = document.getElementById("button1");
+    button.addEventListener("click", forloop, false);
+    var output = document.getElementById("result");
+    
+    function forloop(){
+        for(var i = 0; i < 51; i++){
+            output.innerHTML += i + "<br>";
+        }
+    }
+    
+    
+    
+</script>	
+</body>
+</html>
+
+
+

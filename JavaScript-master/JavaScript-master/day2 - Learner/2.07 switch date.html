@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="day"></p><p id="time"></p>
+    <button id="answer2">Get the date</button>
+    
+<script>
+    var button = document.getElementById("answer2");
+            button.addEventListener("click", date, false);
+    var output1 = document.getElementById("day");
+    var output2 = document.getElementById("time");    
+    
+    
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    var day = days[ now.getDay() ];
+    var month = months[ now.getMonth() ];
+    
+    function date(){
+        
+        var time = new Date();
+        var x = time.getHours();
+        var y = time.getMinutes();
+        var day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        output1.innerHTML = "The day is " + day;
+        output2.innerHTML = " and the time is " + x +":"+ y;
+        
+    }
+    
+</script>
+
+</body>
+</html>

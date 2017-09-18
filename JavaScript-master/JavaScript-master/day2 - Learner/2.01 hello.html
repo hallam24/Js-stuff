@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Hello World</p>
+    <input type="text" id="input" value="Type here...">
+    <button id="button">Press me</button>
+<p id="demo"></p>
+    
+<script>
+    
+    var button = document.getElementById("button");
+    button.addEventListener("click", echo, false);
+    
+    function echo(){
+        var input = document.getElementById("input").value;
+        alert(input);
+    }
+    
+    
+    
+</script>
+</body>
+</html>

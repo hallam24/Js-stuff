@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<form>
+<input type="text" id="input1"/>
+</form>
+<div><button id="button1">Button</button></div>
+<div id="demo"></div>
+
+<script>
+    var button = document.getElementById("button1");
+    button.addEventListener("click", post, false);
+    var output = document.getElementById("demo");
+    
+    function post(){
+        var x = document.getElementById("input1").value;
+        output.innerHTML = x;
+    }
+    
+</script>
+</body>
+</html>

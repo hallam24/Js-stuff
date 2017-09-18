@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>FDG Forensics</title>
+        <link href="css/myCSS.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        Lets play a game <br>
+        Your input: <input type="text" id="input"/> <br>
+        <div id="text" >&nbsp;</div> <br>
+        <button id="button1">Action 1</button> <button id="button2">Action 2</button> <button id="button3">Action 3</button> 
+        
+        
+        
+        <script>
+            
+            var button1 = document.getElementById("button1");
+            button1.addEventListener("click", action1, false);
+            
+            var button2 = document.getElementById("button2");
+            button2.addEventListener("click", action2, false);
+            
+            var button3 = document.getElementById("button3");
+            button3.addEventListener("click", action3, false);
+            
+            var input = document.getElementById("input");
+            
+            var output = document.getElementById("text");
+            
+            
+            
+            function action1() {
+                console.log("action1 selected");
+                output.innerHTML = "Text";
+            }
+            
+            function action2() {
+                console.log("action2 selected");
+            }
+            
+            function action3() {
+                console.log("action3 selected");
+            }
+            
+            function createChar(){
+                output.innerHTML = "Lets play a game. First we'll make your character. Are you Strong, Fast, or Smart?";
+                
+                button1.innerHTML = "Strong";
+                button1.addEventListener("click", action1, false);
+                
+                button2.innerHTML = "Fast";
+                button2.addEventListener("click", action2, false);
+                
+                button3.innerHTML = "Smart";
+                button3.addEventListener("click", action3, false);
+            }
+            
+            window.onload = function(){
+                console.log("Page loaded");
+                createChar();
+            }
+        </script>
+        
+    </body>
+</html>

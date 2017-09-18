@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Conditional Test</p>
+<form>
+<input type="number" id="input1"/>
+
+
+</form>
+<div><input type="button" id="button1" value="Test!"/></div>
+<textarea id="text"></textarea>
+
+<script>
+    var button = document.getElementById("button1");
+    button.addEventListener("click", check, false);
+    var output = document.getElementById("text");
+    
+    function check(){
+       var x = parseInt(document.getElementById("input1").value);
+        
+        if(x < 0 ){
+            output.value = "Less than 0";
+        }
+        else if(x > 0 && x =< 10){
+            output.value = "More than 0 but less than 10";
+        } 
+        else if(x > 10){
+            output.value = "More than 10";
+        }
+    }
+</script>
+
+</body>
+</html>

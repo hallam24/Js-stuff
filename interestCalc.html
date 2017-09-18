@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Interest calculator</title>
+        <link href="css/myCSS.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        Lets calculate some interest <br>
+        <form>
+        How much do you want to borrow? £<input type="number" min="1" step="1" max="1, 000, 000"  id="borrowA"/> <br>
+        What is the interest rate? <input type="number" min="0.1" step="0.1" id="interestR" />% per month<br>
+        How many months do you want the money for? <input type="number" id="borrowL"/> <br>
+        </form>
+        
+        
+        
+        <button id="button1">Calculate Interest</button>
+        <p id="monthly"></p>
+        <p id="total"></p>
+        
+        
+        <script>
+            var button1 = document.getElementById("button1");
+            button1.addEventListener("click", compare, false);
+            
+            var output1 = document.getElementById("monthly");
+            var output2 = document.getElementById("total");
+            
+            function compare(){
+                var borrowA = parseFloat(document.getElementById("borrowA").value);
+                var interestR = parseFloat(document.getElementById("interestR").value);
+                var borrowL = parseFloat(document.getElementById("borrowL").value);
+                
+                
+                var mInterest = (borrowA * (interestR/100));
+                var tInterest = (mInterest * borrowL);
+                
+                output1.innerHTML = "Your monthly interest would be £" + mInterest ;
+                output2.innerHTML = "The total interest paid over " + borrowL + " would be " + tInterest;
+            }
+        
+        </script>
+        
+    </body>
+</html>

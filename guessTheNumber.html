@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>FDG Forensics</title>
+        <link href="css/myCSS.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        Guess the number <br>
+        Your guess:<input type="number" id="guess"/> <br>
+        <button id="button1">Compare number</button> <div id="text"></div>
+        <div id="guesses"></div> <br>
+        <button id="button2">Get a target number</button>
+        <div id="targ"></div>
+        
+        
+        <script>
+            var button1 = document.getElementById("button1");
+            button1.addEventListener("click", compare, false);
+            
+            var button2 = document.getElementById("button2");
+            button2.addEventListener("click", gTarget, false);
+            
+            var output = document.getElementById("text");
+            
+            var cheat = document.getElementById("targ");
+            
+            var guesses = document.getElementById("guesses");
+            
+            var guessesV = 5;
+            
+            var target;
+            
+            var difficulty = 100;
+            
+            function gTarget(){
+                target = Math.floor(Math.random() * difficulty);
+                //cheat.innerHTML = target;
+                guesses.innerHTML = "Guesses left: " + guessesV;
+            }
+            
+            function compare(){
+                if(guessesV != 1){
+                    var x = document.getElementById("guess").value;
+                    if(x > target){
+                        output.innerHTML = "Your guess was too high";
+                        guessesV -= 1;
+                        guesses.innerHTML = "Guesses left: " + guessesV;
+                    }
+                    else if(x < target){
+                        output.innerHTML = "Your guess was too low";
+                        guessesV -= 1;
+                        guesses.innerHTML = "Guesses left: " + guessesV;
+                    }
+                    else{
+                        output.innerHTML = "You got it";
+                    }
+                }else{
+                    guesses.innerHTML = "Guesses left: 0"
+                    output.innerHTML = "You've used up all your guesses";
+                    cheat.innerHTML = "The target was " + target;
+                }
+                
+            }
+        
+        </script>
+        
+    </body>
+</html>

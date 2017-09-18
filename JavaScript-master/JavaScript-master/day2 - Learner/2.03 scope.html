@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Javascript local and global variables</title>
+</head>
+<body>
+<h1>Javascript</h1>
+<h2>Local and global variables</h2>
+<p>a = 5</p>
+<button id="button1">Click me</button>
+
+<span id="globalvar"></span><br /><br />
+<span id="localvar"></span><br /><br />
+
+<script>
+    var a = 5;
+    var button = document.getElementById("button1");
+    button.addEventListener("click", post, false);
+    var output1 = document.getElementById("globalvar");
+    var output2 = document.getElementById("localvar");
+		
+    function post(){
+        output1.innerHTML = a;
+        a = 6;
+        output2.innerHTML = a;
+    }
+</script>
+
+</body>
+</html>
